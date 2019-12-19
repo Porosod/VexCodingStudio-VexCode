@@ -110,18 +110,18 @@ void usercontrol(void) {
     }
     if(Controller1.ButtonR1.pressing()){
            
-           //Rarm.spin(directionType::rev,100,velocityUnits::rpm);
-           //Larm.spin(directionType::fwd,100,velocityUnits::rpm);
+            InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
+            
         }
     
        else if(Controller1.ButtonR2.pressing()) {
-              //Rarm.spin(directionType::fwd,100,velocityUnits::rpm);           
-             // Larm.spin(directionType::rev,100,velocityUnits::rpm);           
+            
+             InRight.spin(directionType::rev,100,velocityUnits::rpm);           
         }
         else{
             //stop the damn arem
-           // Rarm.stop(brakeType::hold);
-          //Larm.stop(brakeType::hold);
+           InLeft.stop(brakeType::hold);
+           InRight.stop(brakeType::hold);
         }
         if(Controller1.ButtonA.pressing()){
             Release.spin(directionType::fwd,10,velocityUnits::dps);
