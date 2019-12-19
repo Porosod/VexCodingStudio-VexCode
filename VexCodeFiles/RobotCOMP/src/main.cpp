@@ -76,7 +76,7 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-  bool ReleaseCube=true;
+  bool ReleaseCube=false;
   int ReleaseLoc=Release.position(degrees);
   while (1) {
     if(true){//tank drive
@@ -125,12 +125,15 @@ void usercontrol(void) {
             Larm.stop(brakeType::hold);
         }
         if(Controller1.ButtonA.pressing()){//releasing cube
+            ReleaseCube=!ReleaseCube;//changes bool to opposite of what it was
             if(ReleaseCube==true){
             ReleaseLoc=Release.position(degrees);
-            Release.spin(directionType::fwd,10,velocityUnits::dps);
+            Release.rotateTo(-65,rotationUnits::deg);
+            
             }
             else if (ReleaseCube==false){
             Release.rotateTo(ReleaseLoc,rotationUnits::deg);
+           
             }
             else{
               Release.stop(brakeType::brake);
