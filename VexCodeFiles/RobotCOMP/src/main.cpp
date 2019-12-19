@@ -124,6 +124,20 @@ void usercontrol(void) {
             Rarm.stop(brakeType::hold);
             Larm.stop(brakeType::hold);
         }
+        if(Controller1.ButtonUp.pressing()){//slow arm movement Up
+          Rarm.spin(directionType::rev,50,velocityUnits::rpm);
+           Larm.spin(directionType::fwd,50,velocityUnits::rpm);
+           }
+           else if(Controller1.ButtonDown.pressing()){//slow arm movement Down
+          Rarm.spin(directionType::fwd,50,velocityUnits::rpm);
+           Larm.spin(directionType::rev,50,velocityUnits::rpm);
+           }
+           else{
+            //stop the damn arm slowly
+            Rarm.stop(brakeType::hold);
+            Larm.stop(brakeType::hold);
+        }
+
         if(Controller1.ButtonA.pressing()){//releasing cube
             ReleaseCube=!ReleaseCube;//changes bool to opposite of what it was
             if(ReleaseCube==true){
