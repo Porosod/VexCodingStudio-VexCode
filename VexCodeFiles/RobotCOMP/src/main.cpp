@@ -77,9 +77,10 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   bool ReleaseCube=false;
+  bool SlowDrive = true;
   int ReleaseLoc=Release.position(degrees);
   while (1) {
-    if(true){//tank drive
+    if(SlowDrive==true){//tank drive
         RDM.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
         RDMB.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
         LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
@@ -95,19 +96,21 @@ void usercontrol(void) {
           CDM.stop(brakeType::hold);
         }
    }
-   else { //non functional
-        RDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        RDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        CDM.spin(vex::directionType::fwd, Controller1.Axis1.value(), vex::velocityUnits::pct);
-        
-        while(Controller1.Axis4.value()){
-        RDM.spin(vex::directionType::rev, Controller1.Axis4.value(), vex::velocityUnits::pct);
-        RDMB.spin(vex::directionType::rev, Controller1.Axis4.value(), vex::velocityUnits::pct);
-        LDM.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
-        LDMB.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
+   else if(SlowDrive==false){
+        RDM.spin(vex::directionType::rev, Controller1.Axis2.value()/2, vex::velocityUnits::pct);
+        RDMB.spin(vex::directionType::rev, Controller1.Axis2.value()/2, vex::velocityUnits::pct);
+        LDM.spin(vex::directionType::fwd, Controller1.Axis3.value()/2, vex::velocityUnits::pct);
+        LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value()/2, vex::velocityUnits::pct);
+         
+         if(Controller1.ButtonLeft.pressing()){//strafing left
+        CDM.spin(directionType::rev,100,velocityUnits::rpm);
          }
+           else if(Controller1.ButtonRight.pressing()){//right
+        CDM.spin(directionType::fwd,100,velocityUnits::rpm);
+         }
+           else{//stop center drive Motor
+          CDM.stop(brakeType::hold);
+        }
     }
     if(Controller1.ButtonR1.pressing()){
            
@@ -119,24 +122,29 @@ void usercontrol(void) {
               Rarm.spin(directionType::fwd,100,velocityUnits::rpm);           
               Larm.spin(directionType::rev,100,velocityUnits::rpm);           
         }
+       else if(Controller1.ButtonUp.pressing()){//slow arm movement Up
+           Rarm.spin(directionType::rev,50,velocityUnits::rpm);
+           Larm.spin(directionType::fwd,50,velocityUnits::rpm);
+           }
+           else if(Controller1.ButtonDown.pressing()){//slow arm movement Down
+           Rarm.spin(directionType::fwd,50,velocityUnits::rpm);
+           Larm.spin(directionType::rev,50,velocityUnits::rpm);
+           }
         else{
             //stop the damn arem
             Rarm.stop(brakeType::hold);
             Larm.stop(brakeType::hold);
         }
         if(Controller1.ButtonUp.pressing()){//slow arm movement Up
-          Rarm.spin(directionType::rev,50,velocityUnits::rpm);
+           Rarm.spin(directionType::rev,50,velocityUnits::rpm);
            Larm.spin(directionType::fwd,50,velocityUnits::rpm);
            }
            else if(Controller1.ButtonDown.pressing()){//slow arm movement Down
-          Rarm.spin(directionType::fwd,50,velocityUnits::rpm);
+           Rarm.spin(directionType::fwd,50,velocityUnits::rpm);
            Larm.spin(directionType::rev,50,velocityUnits::rpm);
            }
-           else{
-            //stop the damn arm slowly
-            Rarm.stop(brakeType::hold);
-            Larm.stop(brakeType::hold);
-        }
+           
+        
 
         if(Controller1.ButtonA.pressing()){//releasing cube
             ReleaseCube=!ReleaseCube;//changes bool to opposite of what it was
