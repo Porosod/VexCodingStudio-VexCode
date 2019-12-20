@@ -95,6 +95,9 @@ void usercontrol(void) {
            else{//stop center drive Motor
           CDM.stop(brakeType::hold);
         }
+        if(Controller1.ButtonB.pressing()){
+          SlowDrive=!SlowDrive;
+        }
    }
    else if(SlowDrive==false){
         RDM.spin(vex::directionType::rev, Controller1.Axis2.value()/2, vex::velocityUnits::pct);
@@ -103,13 +106,16 @@ void usercontrol(void) {
         LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value()/2, vex::velocityUnits::pct);
          
          if(Controller1.ButtonLeft.pressing()){//strafing left
-        CDM.spin(directionType::rev,100,velocityUnits::rpm);
+        CDM.spin(directionType::rev,50,velocityUnits::rpm);
          }
            else if(Controller1.ButtonRight.pressing()){//right
-        CDM.spin(directionType::fwd,100,velocityUnits::rpm);
+        CDM.spin(directionType::fwd,50,velocityUnits::rpm);
          }
            else{//stop center drive Motor
           CDM.stop(brakeType::hold);
+        }
+        if(Controller1.ButtonB.pressing()){
+          SlowDrive=!SlowDrive;
         }
     }
     if(Controller1.ButtonR1.pressing()){
