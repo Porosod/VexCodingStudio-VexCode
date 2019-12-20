@@ -14,9 +14,11 @@ motor RDMB = motor(PORT3, ratio18_1, false);
 motor RDM = motor(PORT4, ratio18_1, false);
 controller Controller1 = controller(primary);
 motor CDM = motor(PORT5, ratio18_1, false);
-motor InLeft = motor(PORT14, ratio18_1, false);
-motor InRight = motor(PORT16, ratio18_1, false);
+motor InLeft = motor(PORT9, ratio18_1, false);
+motor InRight = motor(PORT10, ratio18_1, false);
 motor Release = motor(PORT13, ratio18_1, false);
+motor ArmLeft = motor(PORT14, ratio18_1, false);
+motor ArmRight = motor(PORT16, ratio18_1, false);
 
 // VEXcode generated functions
 

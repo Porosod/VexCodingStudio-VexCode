@@ -12,6 +12,8 @@ extern motor CDM;
 extern motor InLeft;
 extern motor InRight;
 extern motor Release;
+extern motor ArmLeft;
+extern motor ArmRight;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Text.

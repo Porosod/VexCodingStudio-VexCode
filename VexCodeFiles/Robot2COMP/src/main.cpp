@@ -1,3 +1,148 @@
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         9               
+// InRight              motor         10              
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         8               
+// InRight              motor         10              
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         8               
+// InRight              motor         10              
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         8               
+// InRight              motor         9               
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         10              
+// InRight              motor         9               
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         10              
+// InRight              motor         17              
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         18              
+// InRight              motor         17              
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         18              
+// InRight              motor         17              
+// Release              motor         13              
+// ArmLeft              motor         14              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         18              
+// InRight              motor         17              
+// Release              motor         13              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         2               
+// RDMB                 motor         3               
+// RDM                  motor         4               
+// Controller1          controller                    
+// CDM                  motor         5               
+// InLeft               motor         14              
+// InRight              motor         17              
+// Release              motor         13              
+// ---- END VEXCODE CONFIGURED DEVICES ----
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
@@ -111,17 +256,28 @@ void usercontrol(void) {
     if(Controller1.ButtonR1.pressing()){
            
             InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
-            
+            InRight.spin(directionType::rev,100,velocityUnits::rpm);           
         }
     
        else if(Controller1.ButtonR2.pressing()) {
-            
-             InRight.spin(directionType::rev,100,velocityUnits::rpm);           
+            InLeft.spin(directionType::rev,100,velocityUnits::rpm);
+            InRight.spin(directionType::fwd,100,velocityUnits::rpm);           
+             
         }
         else{
-            //stop the damn arem
+            //stop the damn intakes
            InLeft.stop(brakeType::hold);
            InRight.stop(brakeType::hold);
+        }
+
+    if(Controller1.ButtonL1.pressing()){
+           
+            ArmLeft.spin(directionType::fwd,100,velocityUnits::rpm);
+            ArmRight.spin(directionType::rev,100,velocityUnits::rpm);           
+        }
+        else if(Controller1.ButtonL2.pressing()){
+          ArmLeft.spin(directionType::rev,100,velocityUnits::rpm);
+          ArmRight.spin(directionType::fwd,100,velocityUnits::rpm);           
         }
         if(Controller1.ButtonA.pressing()){
             Release.spin(directionType::fwd,10,velocityUnits::dps);
