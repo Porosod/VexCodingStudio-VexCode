@@ -11,7 +11,7 @@ extern controller Controller1;
 extern motor CDM;
 extern motor InLeft;
 extern motor InRight;
-extern motor Release;
+extern motor InTakeLift;
 extern motor ArmLeft;
 extern motor ArmRight;
 

@@ -2,6 +2,21 @@
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
 // LDMB                 motor         1               
+// LDM                  motor         20              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         16              
+// InLeft               motor         11              
+// InRight              motor         12              
+// InTakeLift           motor         15              
+// ArmLeft              motor         18              
+// ArmRight             motor         17              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
 // LDM                  motor         2               
 // RDMB                 motor         3               
 // RDM                  motor         4               
@@ -228,16 +243,8 @@ void usercontrol(void) {
         RDMB.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
         LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-
-        if(Controller1.ButtonLeft.pressing()){//strafing left
-        CDM.spin(directionType::rev,100,velocityUnits::rpm);
-         }
-           else if(Controller1.ButtonRight.pressing()){//right
-        CDM.spin(directionType::fwd,100,velocityUnits::rpm);
-         }
-           else{//stop center drive Motor
-          CDM.stop(brakeType::hold);
-        }
+        CDM.spin(vex::directionType::fwd, Controller1.Axis1.value(), vex::velocityUnits::pct);
+        CDM.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
    }
    else { //non functional
         RDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
@@ -270,21 +277,36 @@ void usercontrol(void) {
            InRight.stop(brakeType::hold);
         }
 
-    if(Controller1.ButtonL1.pressing()){
+    if(Controller1.ButtonR1.pressing()){
            
-            ArmLeft.spin(directionType::fwd,100,velocityUnits::rpm);
-            ArmRight.spin(directionType::rev,100,velocityUnits::rpm);           
+            ArmLeft.spin(directionType::fwd,50,velocityUnits::rpm);
+            ArmRight.spin(directionType::rev,50,velocityUnits::rpm);           
         }
-        else if(Controller1.ButtonL2.pressing()){
-          ArmLeft.spin(directionType::rev,100,velocityUnits::rpm);
-          ArmRight.spin(directionType::fwd,100,velocityUnits::rpm);           
+        else if(Controller1.ButtonR2.pressing()){
+          ArmLeft.spin(directionType::rev,50,velocityUnits::rpm);
+          ArmRight.spin(directionType::fwd,50,velocityUnits::rpm);           
         }
-        if(Controller1.ButtonA.pressing()){
-            Release.spin(directionType::fwd,10,velocityUnits::dps);
-            
-
-
+     if(Controller1.ButtonUp.pressing()){
+            InTakeLift.spin(directionType::fwd,25,velocityUnits::rpm);
         }
+        else if(Controller1.ButtonDown.pressing()){
+            InTakeLift.spin(directionType::rev,25,velocityUnits::rpm);
+        }
+        else{
+          InTakeLift.stop(brakeType::hold);
+        }
+     if(Controller1.ButtonL1.pressing()){
+      InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
+      InRight.spin(directionType::rev,100,velocityUnits::rpm);
+     }
+       else if(Controller1.ButtonL2.pressing()){
+        InLeft.spin(directionType::fwd,25,velocityUnits::rpm);
+        InRight.spin(directionType::rev,25,velocityUnits::rpm);
+       }
+       else{
+         InLeft.stop(brakeType::hold);
+         InRight.stop(brakeType::hold);
+       }
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
   }
