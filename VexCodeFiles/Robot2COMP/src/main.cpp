@@ -104,8 +104,8 @@ void usercontrol(void) {
     if(Controller1.ButtonL1.pressing()){
            
            
-        InTakeLift.spin(directionType::fwd,100,velocityUnits::rpm);
-        
+        InLeft.spin(directionType::fwd,50,velocityUnits::rpm);
+        InRight.spin(directionType::rev,25,velocityUnits::rpm);
         }
     
        else if(Controller1.ButtonL2.pressing()) {
