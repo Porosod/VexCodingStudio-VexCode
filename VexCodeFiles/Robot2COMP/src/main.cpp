@@ -395,13 +395,13 @@ void usercontrol(void) {
         LDMB.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
          }
     }
-    if(Controller1.ButtonR1.pressing()){
+    if(Controller1.ButtonL1.pressing()){
            
             InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
             InRight.spin(directionType::rev,100,velocityUnits::rpm);           
         }
     
-       else if(Controller1.ButtonR2.pressing()) {
+       else if(Controller1.ButtonL2.pressing()) {
             InLeft.spin(directionType::rev,100,velocityUnits::rpm);
             InRight.spin(directionType::fwd,100,velocityUnits::rpm);           
              
@@ -430,18 +430,8 @@ void usercontrol(void) {
         else{
           InTakeLift.stop(brakeType::hold);
         }
-     if(Controller1.ButtonL1.pressing()){
-      InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
-      InRight.spin(directionType::rev,100,velocityUnits::rpm);
-     }
-       else if(Controller1.ButtonL2.pressing()){
-        InLeft.spin(directionType::fwd,25,velocityUnits::rpm);
-        InRight.spin(directionType::rev,25,velocityUnits::rpm);
-       }
-       else{
-         InLeft.stop(brakeType::hold);
-         InRight.stop(brakeType::hold);
-       }
+     
+       
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
   }
