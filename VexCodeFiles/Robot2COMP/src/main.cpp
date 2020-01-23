@@ -375,17 +375,17 @@ void usercontrol(void) {
   while (1) {
     if(true){//tank drive
         RDM.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
-        RDMB.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
+        //RDMB.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
         LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
+        //LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         CDM.spin(vex::directionType::fwd, Controller1.Axis1.value(), vex::velocityUnits::pct);
         CDM.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
    }
    else { //non functional for now
         RDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        RDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
+        //RDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-        LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
+        //LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         CDM.spin(vex::directionType::fwd, Controller1.Axis1.value(), vex::velocityUnits::pct);
         
         while(Controller1.Axis4.value()){
