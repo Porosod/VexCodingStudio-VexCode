@@ -59,6 +59,16 @@ void pre_auton(void) {
 /*---------------------------------------------------------------------------*/
 
 void autonomous(void) {
+  Brain.Screen.print("  #####  ####   #   #  #####    #####"); Brain.Screen.newLine();
+  Brain.Screen.print("  #      #   #  #   #  #        #   #"); Brain.Screen.newLine();
+  Brain.Screen.print("  #      ####   #####  #####    #####"); Brain.Screen.newLine();
+  Brain.Screen.print("  #      #   #  #   #      #    #   #"); Brain.Screen.newLine();
+  Brain.Screen.print("  #####  #####  #   #  #####    #   #"); Brain.Screen.newLine();
+  //RDM.rotateTo(90,deg);
+  //LDM.rotateTo(90,deg);
+
+
+
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
