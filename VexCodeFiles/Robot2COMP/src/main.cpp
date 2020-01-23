@@ -75,6 +75,7 @@ void autonomous(void) {
 /*---------------------------------------------------------------------------*/
 
 void usercontrol(void) {
+  int L1State=0;
   // User control code here, inside the loop
   //bool ReleaseCube=true;
   while (1) {
@@ -102,13 +103,14 @@ void usercontrol(void) {
     }
     if(Controller1.ButtonL1.pressing()){
            
-            InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
-            InRight.spin(directionType::rev,100,velocityUnits::rpm);           
+           
+        InTakeLift.spin(directionType::fwd,100,velocityUnits::rpm);
+        
         }
     
        else if(Controller1.ButtonL2.pressing()) {
-            InLeft.spin(directionType::rev,100,velocityUnits::rpm);
-            InRight.spin(directionType::fwd,100,velocityUnits::rpm);           
+            InLeft.spin(directionType::rev,25,velocityUnits::rpm);
+            InRight.spin(directionType::fwd,25,velocityUnits::rpm);           
              
         }
         else{
@@ -135,7 +137,7 @@ void usercontrol(void) {
         else{
           InTakeLift.stop(brakeType::hold);
         }
-     //TYFF MADE A BIG CHANGE!
+     //TYFF MADE A BIG CHANGE! wow
        
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
