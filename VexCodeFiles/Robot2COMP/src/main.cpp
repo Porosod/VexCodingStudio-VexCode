@@ -2,6 +2,141 @@
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
 // LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         20              
+// InLeft               motor         12              
+// InRight              motor         17              
+// InTakeLift           motor         18              
+// ArmLeft              motor         13              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         20              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         18              
+// ArmLeft              motor         13              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         20              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         13              
+// ArmRight             motor         16              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         20              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         13              
+// ArmRight             motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         16              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         13              
+// ArmRight             motor         18              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         16              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         13              
+// ArmRight             motor         17              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         11              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         16              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         18              
+// ArmRight             motor         17              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         20              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         16              
+// InLeft               motor         12              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         18              
+// ArmRight             motor         17              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
+// LDM                  motor         20              
+// RDMB                 motor         3               
+// RDM                  motor         19              
+// Controller1          controller                    
+// CDM                  motor         16              
+// InLeft               motor         11              
+// InRight              motor         5               
+// InTakeLift           motor         15              
+// ArmLeft              motor         18              
+// ArmRight             motor         17              
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// LDMB                 motor         1               
 // LDM                  motor         20              
 // RDMB                 motor         3               
 // RDM                  motor         19              

@@ -9,16 +9,16 @@ brain  Brain;
 
 // VEXcode device constructors
 motor LDMB = motor(PORT1, ratio18_1, false);
-motor LDM = motor(PORT20, ratio18_1, false);
+motor LDM = motor(PORT11, ratio18_1, false);
 motor RDMB = motor(PORT3, ratio18_1, false);
 motor RDM = motor(PORT19, ratio18_1, false);
 controller Controller1 = controller(primary);
-motor CDM = motor(PORT16, ratio18_1, false);
-motor InLeft = motor(PORT11, ratio18_1, false);
-motor InRight = motor(PORT12, ratio18_1, false);
-motor InTakeLift = motor(PORT15, ratio18_1, false);
-motor ArmLeft = motor(PORT18, ratio18_1, false);
-motor ArmRight = motor(PORT17, ratio18_1, false);
+motor CDM = motor(PORT20, ratio18_1, false);
+motor InLeft = motor(PORT12, ratio18_1, false);
+motor InRight = motor(PORT17, ratio18_1, false);
+motor InTakeLift = motor(PORT18, ratio18_1, false);
+motor ArmLeft = motor(PORT13, ratio18_1, false);
+motor ArmRight = motor(PORT16, ratio18_1, false);
 
 // VEXcode generated functions
 
