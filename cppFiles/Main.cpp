@@ -21,7 +21,7 @@ vex::competition;
 void pre_auton( void ) {
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
-  
+
 }
 
 /*---------------------------------------------------------------------------*/
@@ -35,9 +35,9 @@ void pre_auton( void ) {
 /*---------------------------------------------------------------------------*/
 
 void autonomous( void ) {
-  
-  
-  
+
+
+
 
 }
 
@@ -50,6 +50,7 @@ void autonomous( void ) {
 /*                                                                            */
 /*  You must modify the code to add your own robot specific commands here.    */
 /*----------------------------------------------------------------------------*/
+/* HI ALEX */
 
 void usercontrol( void ) {
     digital_out dig1 = digital_out(Brain.ThreeWirePort.A);
@@ -60,33 +61,33 @@ void usercontrol( void ) {
   Brain.Screen.print("..#......#..#...#...#...#..........#...#."); Brain.Screen.newLine();
   Brain.Screen.print("..#......####...#####...#####......#####."); Brain.Screen.newLine();
   Brain.Screen.print("..#......#...#..#...#.......#......#...#."); Brain.Screen.newLine();
-  Brain.Screen.print("..#####..#####..#...#...#####......#...#."); Brain.Screen.newLine();  
+  Brain.Screen.print("..#####..#####..#...#...#####......#...#."); Brain.Screen.newLine();
   bool driveH=true;
   bool ReleaseCube = true;
     while(true){
-    
+
     if(Controller1.ButtonB.pressing()){
         driveH=!driveH;
         task::sleep(1000);
     }
-       
-   
-    
+
+
+
    if(true){
         RDM.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
         RDMB.spin(vex::directionType::rev, Controller1.Axis2.value(), vex::velocityUnits::pct);
         LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
-       
+
    }
-    
+
     else {
         RDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         RDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         LDM.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         LDMB.spin(vex::directionType::fwd, Controller1.Axis3.value(), vex::velocityUnits::pct);
         CDM.spin(vex::directionType::fwd, Controller1.Axis1.value(), vex::velocityUnits::pct);
-        
+
         while(Controller1.Axis4.value()){
         RDM.spin(vex::directionType::rev, Controller1.Axis4.value(), vex::velocityUnits::pct);
         RDMB.spin(vex::directionType::rev, Controller1.Axis4.value(), vex::velocityUnits::pct);
@@ -94,25 +95,25 @@ void usercontrol( void ) {
         LDMB.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
          }
     }
-       
-      
-      
+
+
+
         if(Controller1.ButtonR1.pressing()){
-           
+
            THEARM.spin(directionType::rev,100,velocityUnits::rpm);
            THEARM2.spin(directionType::fwd,100,velocityUnits::rpm);
         }
-    
+
        else if(Controller1.ButtonR2.pressing()) {
-              THEARM.spin(directionType::fwd,100,velocityUnits::rpm);           
-              THEARM2.spin(directionType::rev,100,velocityUnits::rpm);           
+              THEARM.spin(directionType::fwd,100,velocityUnits::rpm);
+              THEARM2.spin(directionType::rev,100,velocityUnits::rpm);
         }
         else{
             //stop the damn arem
             THEARM.stop(brakeType::brake);
             THEARM2.stop(brakeType::brake);
         }
-        
+
         if(Controller1.ButtonA.pressing()){
             ReleaseCube = !ReleaseCube;
             if(ReleaseCube==true){
@@ -123,10 +124,10 @@ void usercontrol( void ) {
             Release.rotateTo(400,rotationUnits::deg);
             Release.stop(brakeType::brake);
             }
-        }  
+        }
    // ........................................................................
- 
-    vex::task::sleep(20); //Sleep the task for a short amount of time to prevent wasted resources. 
+
+    vex::task::sleep(20); //Sleep the task for a short amount of time to prevent wasted resources.
   }
 }
 
@@ -134,17 +135,17 @@ void usercontrol( void ) {
 // Main will set up the competition functions and callbacks.
 //
 int main() {
-    
-    //Run the pre-autonomous function. 
+
+    //Run the pre-autonomous function.
     pre_auton();
-    
+
     //Set up callbacks for autonomous and driver control periods.
     Competition.autonomous( autonomous );
     Competition.drivercontrol( usercontrol );
 
-    //Prevent main from exiting with an infinite loop.                        
+    //Prevent main from exiting with an infinite loop.
     while(1) {
       vex::task::sleep(100);//Sleep the task for a short amount of time to prevent wasted resources.
-    }    
-       
+    }
+
 }
