@@ -64,8 +64,10 @@ void autonomous(void) {
   Brain.Screen.print("  #      ####   #####  #####    #####"); Brain.Screen.newLine();
   Brain.Screen.print("  #      #   #  #   #      #    #   #"); Brain.Screen.newLine();
   Brain.Screen.print("  #####  #####  #   #  #####    #   #"); Brain.Screen.newLine();
-  //RDM.rotateTo(90,deg);
-  //LDM.rotateTo(90,deg);
+  RDM.rotateTo(90,deg);
+  LDM.rotateTo(90,deg);
+  ArmLeft.rotateTo(720,deg);
+  ArmRight.rotateTo(720,deg);
 
 
 
@@ -111,17 +113,21 @@ void usercontrol(void) {
         LDMB.spin(vex::directionType::fwd, Controller1.Axis4.value(), vex::velocityUnits::pct);
          }
     }
-    if(Controller1.ButtonL1.pressing()){
+    if(Controller1.ButtonR1.pressing()){
            
            
         InLeft.spin(directionType::fwd,50,velocityUnits::rpm);
-        InRight.spin(directionType::rev,25,velocityUnits::rpm);
+        InRight.spin(directionType::rev,50,velocityUnits::rpm);
         }
     
-       else if(Controller1.ButtonL2.pressing()) {
+       else if(Controller1.ButtonR2.pressing()) {
             InLeft.spin(directionType::rev,25,velocityUnits::rpm);
             InRight.spin(directionType::fwd,25,velocityUnits::rpm);           
              
+        }
+        else if (Controller1.ButtonB.pressing()){
+          InLeft.spin(directionType::fwd,100,velocityUnits::rpm);
+        InRight.spin(directionType::rev,100,velocityUnits::rpm);
         }
         else{
             //stop the damn intakes
@@ -129,20 +135,24 @@ void usercontrol(void) {
            InRight.stop(brakeType::hold);
         }
 
-    if(Controller1.ButtonR1.pressing()){
+    if(Controller1.ButtonL1.pressing()){
            
             ArmLeft.spin(directionType::fwd,50,velocityUnits::rpm);
             ArmRight.spin(directionType::rev,50,velocityUnits::rpm);           
         }
-        else if(Controller1.ButtonR2.pressing()){
+        else if(Controller1.ButtonL2.pressing()){
           ArmLeft.spin(directionType::rev,50,velocityUnits::rpm);
           ArmRight.spin(directionType::fwd,50,velocityUnits::rpm);           
         }
+        else{
+         ArmLeft.stop(brakeType::hold);
+         ArmRight.stop(brakeType::hold);
+        }
      if(Controller1.ButtonUp.pressing()){
-            InTakeLift.spin(directionType::fwd,25,velocityUnits::rpm);
+            InTakeLift.spin(directionType::fwd,100,velocityUnits::rpm);
         }
         else if(Controller1.ButtonDown.pressing()){
-            InTakeLift.spin(directionType::rev,25,velocityUnits::rpm);
+            InTakeLift.spin(directionType::rev,100,velocityUnits::rpm);
         }
         else{
           InTakeLift.stop(brakeType::hold);
